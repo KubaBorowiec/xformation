@@ -1,0 +1,27 @@
+<div class="loading" ng-show="loading"><img ng-src="images/loader.gif" alt="loader"></div>
+<section class="table-responsive sort" ng-controller="repositoriesController">
+    <table class="table table-striped">
+        <caption><i class="fa fa-big fa-code-fork"></i>Repositories</caption>
+        <thead>
+        <tr>
+            <th ng-repeat="button in buttons">
+                <button type="submit" ng-click="select($index);"  ng-class="{active:sort==buttons[$index]}"  class="btn btn-default">
+                    <span>{{button}}</span>
+                    <i ng-show="sort==buttons[$index] && sortReverse" class="fa fa-arrow-circle-down"></i>
+                    <i ng-show="sort==buttons[$index] && !sortReverse" class="fa fa-arrow-circle-up"></i>
+                </button>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-show="!loading" ng-repeat="repository in repositories |  orderBy:sort:sortReverse">
+            <td><a href="{{repository.html_url}}" target="_blank">{{ repository.name }}</a></td>
+            <td class="text-xs-center">{{ repository.stargazers_count}}</td>
+            <td class="text-xs-center">{{repository.forks_count  }}</td>
+        </tr>
+        <tr ng-show="error">
+            <td colspan="3" class="danger">{{error}}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

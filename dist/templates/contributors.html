@@ -1,0 +1,36 @@
+<div class="loading" ng-show="loading"><img ng-src="images/loader.gif" alt="loader"></div>
+<section  class="table-responsive" ng-controller="contributorsContorller">
+    <div class="form-group">
+        <label for="filter"><i class="fa fa-big fa-filter"></i>Find</label>
+        <input type="text" class="form-control" id="filter" ng-model="fil">
+    </div>
+    <table class="table table-striped">
+        <caption ><i class="fa fa-big fa-trophy"></i>Top contributors</caption>
+        <thead>
+        <tr>
+            <th class="table-title">&nbsp;</th>
+            <th ng-repeat="title in titles" class="contribiutors">
+                <h3 class="table-title">
+                    <span>{{title}}</span>
+                </h3>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  ng-show="!loading" ng-repeat="post in posts | filter:fil | orderBy:'-contributions'">
+            <td class="text-center">{{ $index+1 }}</td>
+            <td>{{ post.nickname }}</td>
+            <td>{{ post.team }}</td>
+            <td>
+                <div class="number">
+                    <span class="stat width{{ post.contributions }}"></span>&nbsp;
+                </div>
+                <span class="silver small">&nbsp;{{ post.contributions }} / 10</span>
+            </td>
+        </tr>
+        <tr ng-show="error">
+            <td colspan="4" class="danger">{{error}}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

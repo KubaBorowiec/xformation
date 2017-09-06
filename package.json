@@ -1,0 +1,24 @@
+{
+  "name": "xformation-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "webpack": "^3.5.5"
+  },
+  "devDependencies": {
+    "angular": "^1.6.6",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "webpack-dev-server -p --watch",
+    "watch":"webpack-dev-server --content-base build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
