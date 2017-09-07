@@ -1,2 +1,5 @@
+$ cat .gitignore
 node_modules
-.idea
+package.json
+.sass-cache/
+debug.log
