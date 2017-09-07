@@ -18203,7 +18203,12 @@ button.close {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.6rem;
+  background-color: #fff;
   border-radius: 10px;
+}
+.main-menu li a:hover {
+  color: #fff;
+  background-color: #7595cd;
 }
 .main-menu li .active {
   color: #fff;

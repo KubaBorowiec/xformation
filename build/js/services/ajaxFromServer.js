@@ -4,7 +4,8 @@ myApp.factory('ajaxFromServer',['$http', function($http) {
             console.log(urlSource);
             return $http({
                 url: urlSource,
-                method: 'GET'
+                method: 'GET',
+                cache: true
             })
         }
      }
